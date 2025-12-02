@@ -1,0 +1,178 @@
+= audio
+:toc:
+:sectnums:
+ifndef::env-github[:icons: font]
+:note-caption: :paperclip:
+:important-caption: :exclamation:
+:warning-caption: :warning:
+
+== audio
+
+https://wiki.archlinux.org/title/PulseAudio
+
+working::
+----
+paplay /usr/share/sounds/alsa/Front_Center.wav
+
+❯ aplay /usr/share/sounds/alsa/Front_Center.wav 
+
+Playing WAVE '/usr/share/sounds/alsa/Front_Center.wav' : Signed 16 bit Little Endian, Rate 48000 Hz, Mono
+----
+
+----
+pactl list sinks
+pactl list sources
+----
+
+----
+❯ aplay -L
+null
+    Discard all samples (playback) or generate zero samples (capture)
+default
+    Playback/recording through the PulseAudio sound server
+lavrate
+    Rate Converter Plugin Using Libav/FFmpeg Library
+samplerate
+    Rate Converter Plugin Using Samplerate Library
+speexrate
+    Rate Converter Plugin Using Speex Resampler
+jack
+    JACK Audio Connection Kit
+oss
+    Open Sound System
+pulse
+    PulseAudio Sound Server
+speex
+    Plugin using Speex DSP (resample, agc, denoise, echo, dereverb)
+upmix
+    Plugin for channel upmix (4,6,8)
+vdownmix
+    Plugin for channel downmix (stereo) with a simple spacialization
+----
+
+----
+usermod -aG pulse-access root
+
+❯ sudo usermod -aG pulse-access vscode
+
+----
+
+----
+❯ pacmd
+No PulseAudio daemon running, or not running as session daemon.
+
+ ❯ aplay -l
+aplay: device_list:277: no soundcards found...
+----
+
+----
+❯ pactl list cards
+----
+
+----
+❯ pactl list sinks short
+0       Channel_1__Channel_2    module-coreaudio-device.c       float32le 2ch 48000Hz   SUSPENDED
+1       Channel_1__Channel_2.2  module-coreaudio-device.c       float32le 2ch 48000Hz   SUSPENDED
+2       Channel_1__Channel_2.3  module-coreaudio-device.c       float32le 2ch 44100Hz   SUSPENDED
+3       Front_Left__Front_Right module-coreaudio-device.c       float32le 2ch 48000Hz   SUSPENDED
+4       1__2    module-coreaudio-device.c       float32le 2ch 48000Hz   SUSPENDED
+5       Channel_1       module-coreaudio-device.c       float32le 1ch 48000Hz   SUSPENDED
+----
+
+----
+❯ awk -F':' '{ print $1}' /etc/passwd
+
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+_apt
+nobody
+vscode
+systemd-network
+messagebus
+pulse
+----
+
+----
+❯ sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:
+floppy:x:25:
+tape:x:26:
+sudo:x:27:
+audio:x:29:pulse
+dip:x:30:
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+_ssh:x:101:
+vscode:x:1000:
+vcpkg:x:999:vscode
+systemd-journal:x:998:
+systemd-network:x:997:
+input:x:996:
+sgx:x:995:
+kvm:x:994:
+render:x:993:
+messagebus:x:102:
+pulse:x:103:
+pulse-access:x:104:
+----
+
+
+== Stash
+
+=== Audio output in containers
+
+https://unrealcontainers.com/docs/concepts/audio-output
+
+=== Audio Potential Inside Docker: How to Grant Sound Card Access?
+
+
+https://shamsfiroz.medium.com/audio-potential-inside-docker-how-to-grant-sound-card-access-3aaf499fa689
+
+=== How to expose audio from Docker container to a Mac?
+
+https://stackoverflow.com/questions/40136606/how-to-expose-audio-from-docker-container-to-a-mac
+

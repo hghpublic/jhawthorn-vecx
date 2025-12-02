@@ -1,0 +1,26 @@
+= byzanz
+:toc:
+:sectnums:
+ifndef::env-github[:icons: font]
+:note-caption: :paperclip:
+:important-caption: :exclamation:
+:warning-caption: :warning:
+== byzanz
+
+[source, shell]
+----
+❯ sudo apt install byzanz
+
+xwininfo
+
+byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 out.gif
+
+----
+
+
+== Stash
+
+
+=== How to create animated GIF images of a screencast?
+
+https://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast

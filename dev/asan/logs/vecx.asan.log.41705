@@ -1,0 +1,144 @@
+
+=================================================================
+==41705==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 2352 byte(s) in 49 object(s) allocated from:
+    #0 0xffffb4b476d0 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0xffffaf2e5e18  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x575e18) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #2 0xffffaf30b1dc  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x59b1dc) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #3 0xffffaf2eff08  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x57ff08) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #4 0xffffaf2f01b0  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x5801b0) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #5 0xffffaf2de880  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x56e880) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #6 0xffffaf2dcac0  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x56cac0) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #7 0xffffaf592e1c  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x822e1c) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #8 0xffffaf5c619c  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x85619c) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #9 0xffffaf5b6540  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x846540) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #10 0xffffaf596b98  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x826b98) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #11 0xffffaf0c5604  (/lib/aarch64-linux-gnu/libgallium-25.0.7-0ubuntu0.24.04.2.so+0x355604) (BuildId: 738437797400956a37e12f84ba4715b4b678e168)
+    #12 0xaaaab7e3dbcc in GL_RunCommandQueue /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/opengl/SDL_render_gl.c:1374
+    #13 0xaaaab7e27f8c in FlushRenderCommands /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:256
+    #14 0xaaaab7e35964 in SDL_RenderPresent_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:4295
+    #15 0xaaaab7df9784 in SDL_RenderPresent /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/dynapi/SDL_dynapi_procs.h:380
+    #16 0xaaaab7dd7b60 in osint_render /workspaces/jhawthorn-vecx/osint.c:38
+    #17 0xaaaab7ddb490 in vecx_emu /workspaces/jhawthorn-vecx/vecx.c:945
+    #18 0xaaaab7dd8c10 in osint_emuloop /workspaces/jhawthorn-vecx/osint.c:172
+    #19 0xaaaab7dd8ecc in main /workspaces/jhawthorn-vecx/osint.c:224
+    #20 0xffffb48184c0 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #21 0xffffb4818594 in __libc_start_main_impl ../csu/libc-start.c:360
+    #22 0xaaaab7dd742c in _start (/workspaces/jhawthorn-vecx/build/vecx+0x2742c) (BuildId: 54cc9a750b206303b662ca9329be06795d3671d7)
+
+Direct leak of 604 byte(s) in 1 object(s) allocated from:
+    #0 0xffffb4b476d0 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0xffffb238a854  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3a854) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #2 0xffffb23878a8  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x378a8) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #3 0xffffb238189c  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3189c) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #4 0xffffb2386a04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36a04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #5 0xffffb2387f18  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37f18) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #6 0xffffb2382d04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x32d04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #7 0xaaaab7f6ed48 in X11_GL_GetVisual /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:646
+    #8 0xaaaab7f6de04 in X11_GL_InitExtensions /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:354
+    #9 0xaaaab7f6db24 in X11_GL_LoadLibrary /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:250
+    #10 0xaaaab7e74f54 in SDL_GL_LoadLibrary_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:3493
+    #11 0xaaaab7e70340 in SDL_RecreateWindow /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:2004
+    #12 0xaaaab7e3f6bc in GL_CreateRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/opengl/SDL_render_gl.c:1726
+    #13 0xaaaab7e2a544 in SDL_CreateRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:1028
+    #14 0xaaaab7e29e68 in SDL_CreateWindowAndRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:894
+    #15 0xaaaab7df8d8c in SDL_CreateWindowAndRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/dynapi/SDL_dynapi_procs.h:334
+    #16 0xaaaab7dd8db8 in main /workspaces/jhawthorn-vecx/osint.c:208
+    #17 0xffffb48184c0 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #18 0xffffb4818594 in __libc_start_main_impl ../csu/libc-start.c:360
+    #19 0xaaaab7dd742c in _start (/workspaces/jhawthorn-vecx/build/vecx+0x2742c) (BuildId: 54cc9a750b206303b662ca9329be06795d3671d7)
+
+Direct leak of 224 byte(s) in 1 object(s) allocated from:
+    #0 0xffffb4b4709c in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77
+    #1 0xffffb2386040  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36040) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #2 0xffffb2387660  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37660) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #3 0xffffb238786c  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3786c) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #4 0xffffb238189c  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3189c) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #5 0xffffb2386a04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36a04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #6 0xffffb2387f18  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37f18) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #7 0xffffb2382d04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x32d04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #8 0xaaaab7f6ed48 in X11_GL_GetVisual /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:646
+    #9 0xaaaab7f6de04 in X11_GL_InitExtensions /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:354
+    #10 0xaaaab7f6db24 in X11_GL_LoadLibrary /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:250
+    #11 0xaaaab7e74f54 in SDL_GL_LoadLibrary_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:3493
+    #12 0xaaaab7e70340 in SDL_RecreateWindow /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:2004
+    #13 0xaaaab7e3f6bc in GL_CreateRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/opengl/SDL_render_gl.c:1726
+    #14 0xaaaab7e2a544 in SDL_CreateRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:1028
+    #15 0xaaaab7e29e68 in SDL_CreateWindowAndRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:894
+    #16 0xaaaab7df8d8c in SDL_CreateWindowAndRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/dynapi/SDL_dynapi_procs.h:334
+    #17 0xaaaab7dd8db8 in main /workspaces/jhawthorn-vecx/osint.c:208
+    #18 0xffffb48184c0 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #19 0xffffb4818594 in __libc_start_main_impl ../csu/libc-start.c:360
+    #20 0xaaaab7dd742c in _start (/workspaces/jhawthorn-vecx/build/vecx+0x2742c) (BuildId: 54cc9a750b206303b662ca9329be06795d3671d7)
+
+Direct leak of 224 byte(s) in 1 object(s) allocated from:
+    #0 0xffffb4b4709c in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77
+    #1 0xffffb2386040  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36040) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #2 0xffffb2387660  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37660) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #3 0xffffb2387920  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37920) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #4 0xffffb238189c  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3189c) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #5 0xffffb2386a04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36a04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #6 0xffffb2387f18  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37f18) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #7 0xffffb2382d04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x32d04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #8 0xaaaab7f6ed48 in X11_GL_GetVisual /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:646
+    #9 0xaaaab7f6de04 in X11_GL_InitExtensions /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:354
+    #10 0xaaaab7f6db24 in X11_GL_LoadLibrary /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:250
+    #11 0xaaaab7e74f54 in SDL_GL_LoadLibrary_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:3493
+    #12 0xaaaab7e70340 in SDL_RecreateWindow /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:2004
+    #13 0xaaaab7e3f6bc in GL_CreateRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/opengl/SDL_render_gl.c:1726
+    #14 0xaaaab7e2a544 in SDL_CreateRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:1028
+    #15 0xaaaab7e29e68 in SDL_CreateWindowAndRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:894
+    #16 0xaaaab7df8d8c in SDL_CreateWindowAndRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/dynapi/SDL_dynapi_procs.h:334
+    #17 0xaaaab7dd8db8 in main /workspaces/jhawthorn-vecx/osint.c:208
+    #18 0xffffb48184c0 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #19 0xffffb4818594 in __libc_start_main_impl ../csu/libc-start.c:360
+    #20 0xaaaab7dd742c in _start (/workspaces/jhawthorn-vecx/build/vecx+0x2742c) (BuildId: 54cc9a750b206303b662ca9329be06795d3671d7)
+
+Indirect leak of 84896 byte(s) in 379 object(s) allocated from:
+    #0 0xffffb4b4709c in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77
+    #1 0xffffb2386040  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36040) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #2 0xffffb2387660  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37660) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #3 0xffffb2387920  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37920) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #4 0xffffb238189c  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3189c) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #5 0xffffb2386a04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36a04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #6 0xffffb2387f18  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37f18) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #7 0xffffb2382d04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x32d04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #8 0xaaaab7f6ed48 in X11_GL_GetVisual /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:646
+    #9 0xaaaab7f6de04 in X11_GL_InitExtensions /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:354
+    #10 0xaaaab7f6db24 in X11_GL_LoadLibrary /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:250
+    #11 0xaaaab7e74f54 in SDL_GL_LoadLibrary_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:3493
+    #12 0xaaaab7e70340 in SDL_RecreateWindow /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:2004
+    #13 0xaaaab7e3f6bc in GL_CreateRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/opengl/SDL_render_gl.c:1726
+    #14 0xaaaab7e2a544 in SDL_CreateRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:1028
+    #15 0xaaaab7e29e68 in SDL_CreateWindowAndRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:894
+    #16 0xaaaab7df8d8c in SDL_CreateWindowAndRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/dynapi/SDL_dynapi_procs.h:334
+    #17 0xaaaab7dd8db8 in main /workspaces/jhawthorn-vecx/osint.c:208
+    #18 0xffffb48184c0 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #19 0xffffb4818594 in __libc_start_main_impl ../csu/libc-start.c:360
+    #20 0xaaaab7dd742c in _start (/workspaces/jhawthorn-vecx/build/vecx+0x2742c) (BuildId: 54cc9a750b206303b662ca9329be06795d3671d7)
+
+Indirect leak of 13216 byte(s) in 59 object(s) allocated from:
+    #0 0xffffb4b4709c in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77
+    #1 0xffffb2386040  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36040) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #2 0xffffb2387660  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37660) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #3 0xffffb238786c  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3786c) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #4 0xffffb238189c  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x3189c) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #5 0xffffb2386a04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x36a04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #6 0xffffb2387f18  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x37f18) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #7 0xffffb2382d04  (/lib/aarch64-linux-gnu/libGLX_mesa.so.0+0x32d04) (BuildId: 026417a606eb59082884a4f77958f8f071b57350)
+    #8 0xaaaab7f6ed48 in X11_GL_GetVisual /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:646
+    #9 0xaaaab7f6de04 in X11_GL_InitExtensions /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:354
+    #10 0xaaaab7f6db24 in X11_GL_LoadLibrary /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/x11/SDL_x11opengl.c:250
+    #11 0xaaaab7e74f54 in SDL_GL_LoadLibrary_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:3493
+    #12 0xaaaab7e70340 in SDL_RecreateWindow /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/video/SDL_video.c:2004
+    #13 0xaaaab7e3f6bc in GL_CreateRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/opengl/SDL_render_gl.c:1726
+    #14 0xaaaab7e2a544 in SDL_CreateRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:1028
+    #15 0xaaaab7e29e68 in SDL_CreateWindowAndRenderer_REAL /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/render/SDL_render.c:894
+    #16 0xaaaab7df8d8c in SDL_CreateWindowAndRenderer /usr/local/vcpkg/buildtrees/sdl2/src/ase-2.32.8-cdefe94ced.clean/src/dynapi/SDL_dynapi_procs.h:334
+    #17 0xaaaab7dd8db8 in main /workspaces/jhawthorn-vecx/osint.c:208
+    #18 0xffffb48184c0 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #19 0xffffb4818594 in __libc_start_main_impl ../csu/libc-start.c:360
+    #20 0xaaaab7dd742c in _start (/workspaces/jhawthorn-vecx/build/vecx+0x2742c) (BuildId: 54cc9a750b206303b662ca9329be06795d3671d7)
+
+SUMMARY: AddressSanitizer: 101516 byte(s) leaked in 490 allocation(s).

@@ -1,0 +1,40 @@
+= list-audio-drivers
+:toc:
+:sectnums: 
+
+== Linux devcontainer
+
+[source, shell]
+----
+./build/list-audio-drivers 
+Available video drivers:
+x11
+wayland
+offscreen
+dummy
+evdev
+Available audio drivers:
+dsp
+disk
+dummy
+Currently using audio driver (null)
+Currently using video driver (null)
+----
+
+
+== macOS host
+
+[source, shell]
+----
+./build/list-audio-drivers
+Available video drivers:
+cocoa
+offscreen
+dummy
+Available audio drivers:
+coreaudio
+disk
+dummy
+Currently using audio driver coreaudio
+Currently using video driver cocoa
+----

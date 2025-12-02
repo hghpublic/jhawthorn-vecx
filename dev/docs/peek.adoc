@@ -1,0 +1,30 @@
+= peek
+:toc:
+:sectnums:
+ifndef::env-github[:icons: font]
+:note-caption: :paperclip:
+:important-caption: :exclamation:
+:warning-caption: :warning:
+== peek
+
+[source, shell]
+----
+❯ sudo apt install peek
+----
+
+https://github.com/phw/peek
+
+
+== Stash
+
+
+=== How to create animated GIF images of a screencast?
+
+https://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast
+
+=== key-mon
+
+https://github.com/scottkirkwood/key-mon
+
+https://github.com/critiqjo/key-mon
+
