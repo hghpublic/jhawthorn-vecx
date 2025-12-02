@@ -1,0 +1,112 @@
+= VecX
+:toc:
+:sectnums:
+ifndef::env-github[:icons: font]
+:note-caption: :paperclip:
+:important-caption: :exclamation:
+:warning-caption: :warning:
+
+[IMPORTANT]
+====
+The commits in this branch are highly unstable. I rebase and force push at will.
+
+The history may be rewritten without notice.
+====
+
+== VecX
+
+https://github.com/jhawthorn/vecx
+
+[source, shell]
+----
+vecx [cartfile] [overlayfile]
+----
+
+== Overlays
+
+https://github.com/raphkoster/vectrex-overlays
+
+
+== libretro
+
+https://www.libretro.com/
+
+https://github.com/libretro/libretro-vecx
+
+== Wiki
+
+https://en.wikipedia.org/wiki/Vectrex
+
+
+== Console5 Tech Wiki
+
+https://wiki.console5.com/wiki/Console5_Tech_Wiki
+
+https://wiki.console5.com/wiki/Vectrex
+
+== YouTube
+
+=== RetroArch
+
+Scramble (1982) [GCE] - RetroArch with vecx::
+
+https://www.youtube.com/watch?v=1V0c6vJ6vh0
+
+Vectrex Pong (1998) [GCE] - RetroArch with vecx::
+
+https://www.youtube.com/watch?v=aSSo5N-3UAM
+
+
+== Stash
+
+=== Vectrex manual project
+
+https://vectorgaming.proboards.com/thread/849/vectrex-manual-project
+
+https://vectorgaming.proboards.com/
+
+=== Graham Toal's Vectrex games
+
+https://gtoal.com/vectrex/games/
+
+https://gtoal.com/vectrex/puck/
+
+
+
+
+=== Revival Retro Gaming Expo 2017
+
+https://www.binarystarsoftware.com/?p=487
+
+https://binarystarsoftware.itch.io/
+
+
+=== Vectrexagon
+
+http://www.sdwdevelopments.com/vectrexagon.html
+
+
+=== VectreC
+
+https://github.com/rogerboesch/vectrex-dev
+
+=== Vectrex Game Programming in C
+
+https://vectrex.substack.com/p/vectrex-game-programming-in-c
+
+=== vectrex.de
+
+https://www.vectrex.de/
+
+
+=== Vectrex Thrust Source
+
+https://www.emix8.org/static.php?page=VectrexThrustSource
+
+=== playvectrex.com
+
+https://www.playvectrex.com/
+
+=== VECTREX DEVELOPER
+
+https://itwww.hs-pforzheim.de/daten/mitarbeiter/johannsen/vectrex_lab/projects/vectrex_developer/vectrex_developer.htm
