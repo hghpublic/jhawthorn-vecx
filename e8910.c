@@ -515,6 +515,8 @@ e8910_init_sound()
 	reqSpec.samples = SOUND_SAMPLE;            // Audio buffer size in samples
 	reqSpec.callback = e8910_callback;      // Callback function for filling the audio buffer
 	reqSpec.userdata = NULL;
+
+#if defined(HAS_AUDIO)
 	/* Open the audio device */
 	if ( SDL_OpenAudio(&reqSpec, &givenSpec) < 0 ){
 		fprintf(stderr, "Couldn't open audio: %s\n", SDL_GetError());
@@ -527,11 +529,14 @@ e8910_init_sound()
 
 	// Start playing audio
 	SDL_PauseAudio(0);
+#endif // HAS_AUDIO
 }
 
 void
 e8910_done_sound()
 {
+#if defined(HAS_AUDIO)
 	SDL_CloseAudio();
+#endif // HAS_AUDIO
 }
 

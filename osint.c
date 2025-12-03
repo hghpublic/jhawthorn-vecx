@@ -195,7 +195,13 @@ void load_overlay(const char *filename){
 }
 
 int main(int argc, char *argv[]){
-	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0){
+
+#if defined(HAS_AUDIO)
+    const Uint32 flags = (SDL_INIT_VIDEO | SDL_INIT_AUDIO);
+#else
+    const Uint32 flags = SDL_INIT_VIDEO;
+#endif
+	if(SDL_Init(flags) < 0){
 		fprintf(stderr, "Failed to initialize SDL: %s\n", SDL_GetError());
 		exit(-1);
 	}
