@@ -211,6 +211,8 @@ int main(int argc, char *argv[]){
 		exit(-2);
 	}
 
+    SDL_SetWindowTitle(screen, "VecX Emulator");
+    
 	resize(330*3/2, 410*3/2);
 
 	if(argc > 1)
